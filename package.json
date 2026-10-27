@@ -1,0 +1,9 @@
+{
+  "name": "sistema-os-orcamentos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema de ordens de serviço e orçamentos para assistência de informática",
+  "scripts": {
+    "dev": "npx serve . -l 3000"
+  }
+}

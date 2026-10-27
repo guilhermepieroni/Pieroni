@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f766e">
+  <title>Painel de OS e Orçamentos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  <script defer type="module" src="js/app.js"></script>
+</head>
+<body>
+  <!-- Login (aparece só com Firebase configurado) -->
+  <section id="login" hidden>
+    <form id="loginForm" class="card login-card">
+      <h1>Entrar</h1>
+      <p class="muted">Acesso restrito. Use o e-mail e a senha cadastrados no Firebase.</p>
+      <label>E-mail<input type="email" id="loginEmail" autocomplete="username" required></label>
+      <label>Senha<input type="password" id="loginPass" autocomplete="current-password" required></label>
+      <p id="loginError" class="error" role="alert"></p>
+      <button class="btn primary" type="submit">Entrar</button>
+    </form>
+  </section>
+
+  <div id="app" hidden>
+    <aside class="nav" aria-label="Menu principal">
+      <div class="brand"><span><img style="height: 60px; border-radius:6px;" src="img/logo.png" alt="Logo"></span></div>
+      <nav>
+        <a href="#/" data-nav="dashboard"><span>Início</span></a>
+        <a href="#/clientes" data-nav="clientes"><span>Clientes</span></a>
+        <a href="#/orcamentos" data-nav="orcamentos"><span>Orçamentos</span></a>
+        <a href="#/os" data-nav="os"><span>Ordens</span></a>
+        <a href="#/config" data-nav="config"><span>Config.</span></a>
+      </nav>
+      <button id="logoutBtn" class="btn ghost" hidden>Sair</button>
+    </aside>
+    <main id="view" tabindex="-1"></main>
+  </div>
+
+  <dialog id="modal"></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
